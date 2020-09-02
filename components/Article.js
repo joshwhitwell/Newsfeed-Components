@@ -86,6 +86,16 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  // 5. Test New Article Object //
+  {
+    title: 'The Most Boring Article You\'ll Read Today',
+    date: 'Nov 22, 2013',
+    firstParagraph: `According to an article published in the journal Motivation and Emotion, there are five types of boredom—which is one more than the research team expected to identify. The boredom varieties range from a calm and pleasant experience to something more like depression.`,
+
+    secondParagraph: `The research team, led by Thomas Goetz of the University of Konstanz and the Thurgau University of Teacher Education in Konstanz, Germany, collected real-time data from university and high-school students multiple times a day over a two-week period. They found that boredom is not only widespread—every student in the study experienced some level of boredom—but it's also more common than other emotions. "Boredom is the most often and most intense emotion experienced by students," wrote Goetz in an email, "much more intense than enjoyment, anxiety or anger."`,
+
+    thirdParagraph: `Students reported if they were bored, answered questions about their positive or negative feelings, and rated how calm or fidgety they felt. From these reports the researchers identified five different types of boredom. They also found that tedium is personal. "People tend to experience specific types of boredom," said Goetz, which could mean that boredom is linked to your personality.`
   }
 ];
 
@@ -114,3 +124,55 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+// 1. Component Maker Function//
+function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
+  // 1a. Create Elements//
+  const article = document.createElement('div')
+  const header = document.createElement('h2')
+  const dateP = document.createElement('p')
+  const paragraph1 = document.createElement('p')
+  const paragraph2 = document.createElement('p')
+  const paragraph3 = document.createElement('p')
+  const button = document.createElement('span')
+
+  // 1b. Structure Elements//
+  article.appendChild(header)
+  article.appendChild(dateP)
+  article.appendChild(paragraph1)
+  article.appendChild(paragraph2)
+  article.appendChild(paragraph3)
+  article.appendChild(button)
+
+  // 1c. Add Class Names//
+  article.classList.add('article')
+  dateP.classList.add('date')
+  button.classList.add('expandButton')
+
+  // 1d. Add Element Content//
+  header.textContent = title
+  dateP.textContent = date
+  paragraph1.textContent = firstParagraph
+  paragraph2.textContent = secondParagraph
+  paragraph3.textContent = thirdParagraph
+  button.textContent = '+'
+
+  // 2. Add Event Listener//
+  button.addEventListener('click', () => {
+    article.classList.toggle('article-open')
+  })
+
+  // 3. Outputs Article Component//
+  return article
+}
+
+// 4. Loop Over Array & Append to DOM//
+data.forEach(element => {
+  const newsfeed = document.querySelector('div.articles')
+  const newArticle = articleMaker(element)
+  newsfeed.appendChild(newArticle)
+})
+
+// 5. See Above //
+
+
