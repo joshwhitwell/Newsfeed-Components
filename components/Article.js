@@ -96,6 +96,15 @@ const data = [
     secondParagraph: `The research team, led by Thomas Goetz of the University of Konstanz and the Thurgau University of Teacher Education in Konstanz, Germany, collected real-time data from university and high-school students multiple times a day over a two-week period. They found that boredom is not only widespread—every student in the study experienced some level of boredom—but it's also more common than other emotions. "Boredom is the most often and most intense emotion experienced by students," wrote Goetz in an email, "much more intense than enjoyment, anxiety or anger."`,
 
     thirdParagraph: `Students reported if they were bored, answered questions about their positive or negative feelings, and rated how calm or fidgety they felt. From these reports the researchers identified five different types of boredom. They also found that tedium is personal. "People tend to experience specific types of boredom," said Goetz, which could mean that boredom is linked to your personality.`
+  },
+  {
+    title: 'Heaviest weight lifted by human beard',
+    date: 'Jun 26, 2013',
+    firstParagraph: `The heaviest weight lifted by human beard is 63.80 kg (140 lb 16 oz) and was achieved by Antanas Kontrimas (Lithuania) on the set of ‘Rekorlar Dunyasi' in Istanbul, Turkey, on 26 June 2013.`,
+
+    secondParagraph: `Antanas lifted the presenter of the show Gupse Özay'ın. Heaviest Weight Beard Lift Guinness World Records`,
+
+    thirdParagraph: `See a video of Antanas performing on 'Lo Show dei Record' in Rome, Italy in 2012.`
   }
 ];
 
