@@ -56,8 +56,21 @@ function menuMaker (arr) {
 
   // 4. Add Event Listener //
 
+  // menuButton.addEventListener('click', () => {
+  //   menu.classList.toggle('menu--open')
+  // })
+
   menuButton.addEventListener('click', () => {
-    menu.classList.toggle('menu--open')
+    if (menu.style.width === '350px') {
+      menu.style.width = ''
+      Array.from(document.querySelectorAll('.menu ul li')).forEach(element => {
+        element.style.display = ''})
+    } else {
+      menu.style.width = '350px'
+      Array.from(document.querySelectorAll('.menu ul li')).forEach(element => {
+        element.style.display = 'block'})
+    }
+    
   })
 
   // 5. Output Menu //
