@@ -56,18 +56,24 @@ function menuMaker (arr) {
 
   // 4. Add Event Listener //
 
+  //Original Menu Open Event Listener //
+  
   // menuButton.addEventListener('click', () => {
   //   menu.classList.toggle('menu--open')
   // })
 
+  // Menu Open Event Listener With Slide Effect //
+
   menuButton.addEventListener('click', () => {
+    const menuItems = Array.from(document.querySelectorAll('.menu ul li'))
+    console.log(menuItems)
     if (menu.style.width === '350px') {
       menu.style.width = ''
-      Array.from(document.querySelectorAll('.menu ul li')).forEach(element => {
+      menuItems.forEach(element => {
         element.style.display = ''})
     } else {
       menu.style.width = '350px'
-      Array.from(document.querySelectorAll('.menu ul li')).forEach(element => {
+      menuItems.forEach(element => {
         element.style.display = 'block'})
     }
     
